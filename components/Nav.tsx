@@ -38,6 +38,8 @@ export default function Nav() {
         <nav style={{ display: 'flex', alignItems: 'center', gap: 'clamp(18px,2.6vw,38px)', flexWrap: 'wrap' }}>
           <Link href="/" style={linkStyle('/')} className="nav-link">Home</Link>
           <Link href="/artists" style={linkStyle('/artists')} className="nav-link">Artists</Link>
+          <Link href="/#where-we-are" style={linkStyle('/#where-we-are')} className="nav-link">Where We Are</Link>
+          <Link href="/parking" style={linkStyle('/parking')} className="nav-link">Parking</Link>
           <Link href="/contact" style={linkStyle('/contact')} className="nav-link">Contact</Link>
           <Link
             href="/contact"

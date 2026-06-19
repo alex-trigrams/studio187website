@@ -78,7 +78,7 @@ export default function HomePage() {
       </section>
 
       {/* ── Find us ── */}
-      <section style={{ background: '#E4E0D8', color: '#0A0A0A', borderBottom: '1px solid rgba(10,10,10,0.12)' }}>
+      <section id="where-we-are" style={{ background: '#E4E0D8', color: '#0A0A0A', borderBottom: '1px solid rgba(10,10,10,0.12)' }}>
         <div style={{ maxWidth: 1320, margin: '0 auto', padding: 'clamp(72px,11vw,150px) clamp(20px,5vw,72px)' }}>
           <div style={{ fontFamily: 'var(--font-space-mono), monospace', fontSize: 12, letterSpacing: '0.18em', textTransform: 'uppercase', color: '#6b6760', marginBottom: 'clamp(40px,6vw,64px)' }}>Find us</div>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(300px,1fr))', gap: 'clamp(40px,5vw,72px)', alignItems: 'start' }}>
