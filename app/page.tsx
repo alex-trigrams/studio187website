@@ -85,6 +85,7 @@ export default function HomePage() {
             <div>
               <h2 style={{ fontFamily: 'var(--font-anton), sans-serif', fontWeight: 400, textTransform: 'uppercase', fontSize: 'clamp(30px,4.4vw,52px)', lineHeight: 0.96, margin: '0 0 28px', color: '#0A0A0A' }}>187 Guildford Rd<br />Maylands WA</h2>
               <p style={{ fontSize: 16, lineHeight: 1.6, color: '#4a463f', maxWidth: 420, margin: '0 0 28px' }}>Street parking along Guildford Road and the surrounding side streets. Two minutes from Maylands train station.</p>
+              <Link href="/parking" className="hover-border-dark" style={{ display: 'inline-block', fontFamily: 'var(--font-space-mono), monospace', fontSize: 12, letterSpacing: '0.12em', textTransform: 'uppercase', color: '#0A0A0A', textDecoration: 'none', borderBottom: '1px solid rgba(10,10,10,0.3)', paddingBottom: 3, marginBottom: 28 }}>Parking map →</Link>
               <a href="tel:0406084799" className="hover-border-dark" style={{ fontFamily: 'var(--font-space-mono), monospace', fontSize: 15, letterSpacing: '0.06em', color: '#0A0A0A', textDecoration: 'none', borderBottom: '1px solid rgba(10,10,10,0.3)', paddingBottom: 4 }}>0406 084 799</a>
               <div style={{ marginTop: 36, padding: '16px 20px', border: '1px solid rgba(10,10,10,0.22)', display: 'inline-block' }}>
                 <span style={{ fontFamily: 'var(--font-space-mono), monospace', fontSize: 11.5, letterSpacing: '0.12em', textTransform: 'uppercase', color: '#6b6760' }}>⚠ Our studio is not suitable for children</span>
@@ -100,6 +101,20 @@ export default function HomePage() {
               ))}
               <div style={{ fontFamily: 'var(--font-space-mono), monospace', fontSize: 11, letterSpacing: '0.05em', color: '#6b6760', marginTop: 16, lineHeight: 1.6 }}>Public holidays — by artist appointment</div>
             </div>
+          </div>
+
+          {/* ── Map ── */}
+          <div style={{ marginTop: 'clamp(48px,6vw,72px)', borderRadius: 10, overflow: 'hidden', border: '1px solid rgba(10,10,10,0.18)' }}>
+            <iframe
+              src="https://maps.google.com/maps?q=187+Guildford+Rd,+Maylands+WA+6051,+Australia&output=embed&z=15"
+              width="100%"
+              height="440"
+              style={{ border: 0, display: 'block' }}
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              title="Studio 187 — 187 Guildford Rd, Maylands WA"
+            />
           </div>
         </div>
       </section>
