@@ -1,0 +1,41 @@
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html, body {
+  background: #0A0A0A;
+  color: #ECE8E1;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+::selection { background: #ECE8E1; color: #0A0A0A; }
+
+input::placeholder, textarea::placeholder { color: #56524B; }
+select option { background: #0A0A0A; color: #ECE8E1; }
+
+@keyframes s187fade {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: none; }
+}
+
+/* Scroll snap container */
+[data-reels]::-webkit-scrollbar { display: none; }
+
+/* Nav link hover */
+.nav-link { transition: color 0.2s; }
+.nav-link:hover { color: #ECE8E1 !important; }
+
+/* Generic hover utilities */
+.hover-opacity:hover { opacity: 0.85 !important; }
+.hover-border-light:hover { border-color: #ECE8E1 !important; }
+.hover-border-dark:hover  { border-color: #0A0A0A !important; }
+.hover-color-light:hover  { color: #ECE8E1 !important; }
+.hover-color-white:hover  { color: #fff !important; }
+
+/* Reel card */
+.reel-card {
+  transition: transform 0.4s ease, border-color 0.4s ease;
+}
+.reel-card:hover {
+  transform: translateY(-8px);
+  border-color: rgba(236,232,225,0.45) !important;
+}
