@@ -33,7 +33,7 @@ export default function Nav() {
         display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 20, flexWrap: 'wrap',
       }}>
         <Link href="/" style={{ background: 'none', border: 'none', padding: 0, cursor: 'pointer', display: 'flex', alignItems: 'center', textDecoration: 'none' }}>
-          <Image src="/images/logo.jpg" alt="Studio 187 Tattoo" width={44} height={44} style={{ objectFit: 'contain', filter: 'invert(1)', mixBlendMode: 'screen' }} />
+          <Image src="/images/logo.jpg" alt="Studio 187 Tattoo" width={66} height={66} style={{ objectFit: 'contain', filter: 'invert(1)', mixBlendMode: 'screen' }} />
         </Link>
         <nav style={{ display: 'flex', alignItems: 'center', gap: 'clamp(18px,2.6vw,38px)', flexWrap: 'wrap' }}>
           <Link href="/" style={linkStyle('/')} className="nav-link">Home</Link>
