@@ -66,11 +66,32 @@ export const confirmPoints = [
   { n: '05', h: 'Find the studio', b: '187 Guildford Road, Maylands WA 6051. Street parking on Guildford Rd and side streets, 2 min from Maylands station.' },
 ]
 
-export const reelSeed = [
-  { img: '/images/oz.jpg', handle: '@oztattooist', caption: 'Backpiece linework in progress' },
-  { img: '/images/aino.jpg', handle: '@aino.tattoo', caption: 'Ornamental sleeve — session two' },
-  { img: '/images/julian.jpg', handle: '@jujus.tattoo', caption: 'Black & grey portrait detail' },
-  { img: '/images/gypsy.jpg', handle: '@gypsy.doll.tattoo', caption: 'Colour flash, fresh off the gun' },
-  { img: '/images/tcharna.jpg', handle: '@tcharna.tattoos', caption: 'Bold traditional, healed & settled' },
-  { img: '/images/ilara.jpg', handle: '@ilara.tattoos', caption: 'Illustrative blackwork detail' },
+export interface StoreProduct {
+  id: string
+  name: string
+  description: string
+  price: string | null
+  stripeLink: string | null
+  category: string
+}
+
+// To activate a product: set price to e.g. '$35.00' and stripeLink to the Stripe payment link URL.
+export const storeProducts: StoreProduct[] = [
+  { id: 'voucher', name: 'Gift Voucher', description: 'Give the gift of ink. Redeemable against any tattoo at Studio 187 — any artist, any size.', price: null, stripeLink: null, category: 'Vouchers' },
+  { id: 'hat', name: 'Cap', description: 'Studio 187 embroidered cap. One size, adjustable strap.', price: null, stripeLink: null, category: 'Apparel' },
+  { id: 'stubby-holder', name: 'Stubby Holder', description: 'Keep your drink cold. Studio 187 branded neoprene holder.', price: null, stripeLink: null, category: 'Accessories' },
+  { id: 'hoodie', name: 'Hoodie', description: 'Heavy-weight pullover hoodie with Studio 187 print. Sizes XS–3XL.', price: null, stripeLink: null, category: 'Apparel' },
+  { id: 'shirt', name: 'Tee', description: 'Classic Studio 187 tee. Unisex fit, sizes XS–3XL.', price: null, stripeLink: null, category: 'Apparel' },
+  { id: 'stickers', name: 'Sticker Pack', description: 'A set of Studio 187 die-cut stickers. Stick them anywhere.', price: null, stripeLink: null, category: 'Accessories' },
+]
+
+export interface GalleryImage {
+  src: string
+  alt: string
+  artist?: string
+}
+
+// To add work: drop the image in /public/images/gallery/ and add one entry below.
+export const galleryImages: GalleryImage[] = [
+  // { src: '/images/gallery/filename.jpg', alt: 'Brief description', artist: 'Oz' },
 ]

@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { artists, hours, aftercareItems, depositItems } from '@/lib/data'
-import ReelsSection from '@/components/ReelsSection'
+import GallerySection from '@/components/GallerySection'
 import ReviewsSection from '@/components/ReviewsSection'
 
 function pad(n: number) { return String(n).padStart(2, '0') }
@@ -27,8 +27,8 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ── Reels ── */}
-      <ReelsSection />
+      {/* ── Gallery ── */}
+      <GallerySection />
 
       {/* ── Reviews ── */}
       <ReviewsSection />
