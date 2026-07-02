@@ -46,7 +46,7 @@ export default async function ArtistDetailPage({ params }: { params: Promise<{ s
               <InstagramIcon />
               <span style={{ fontFamily: 'var(--font-space-mono), monospace', fontSize: 13, letterSpacing: '0.02em' }}>{artist.handle} · Instagram</span>
             </a>
-            <span style={{ fontFamily: 'var(--font-space-mono), monospace', fontSize: 13, color: '#9d988e' }}>{artist.email}</span>
+            {artist.email && <span style={{ fontFamily: 'var(--font-space-mono), monospace', fontSize: 13, color: '#9d988e' }}>{artist.email}</span>}
           </div>
 
           <Link href={`/contact?artist=${encodeURIComponent(artist.name)}`} className="hover-opacity" style={{ border: 'none', cursor: 'pointer', fontFamily: 'var(--font-space-mono), monospace', fontSize: 13, letterSpacing: '0.14em', textTransform: 'uppercase', padding: '16px 34px', background: '#ECE8E1', color: '#0A0A0A', textDecoration: 'none', display: 'inline-block', borderRadius: 8 }}>Enquire with {artist.first}</Link>

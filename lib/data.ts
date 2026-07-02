@@ -20,6 +20,7 @@ export const artists: Artist[] = [
   { name: 'Gypsy', first: 'Gypsy', short: 'GYP', tag: 'Anime & colour', handle: '@gypsy.doll.tattoo', email: 'gypsydoll@mail.com', img: '/images/gypsy.jpg', slug: 'gypsy', work: 4 },
   { name: 'Jaimee', first: 'Jaimee', short: 'JAI', tag: 'Floral fine line', handle: '@jaimeejay.tattoo', email: 'Jaimeejay.tattoo@gmail.com', img: '/images/jaimee.jpg', slug: 'jaimee', work: 4 },
   { name: 'Quinn', first: 'Quinn', short: 'QUI', tag: 'Fineline & micro', handle: '@quinns.ink', email: 'Quinns.inkk@gmail.com', img: '/images/quinn.jpg', slug: 'quinn', work: 4 },
+  { name: 'Trinity', first: 'Trinity', short: 'TRI', tag: 'Fine line, custom & blackwork', handle: '@trinity.dollas.tattoo', email: '', img: '/images/trinity.jpg', slug: 'trinity', work: 4 },
 ]
 
 export const reviews = [
