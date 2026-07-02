@@ -23,12 +23,63 @@ export const artists: Artist[] = [
   { name: 'Trinity', first: 'Trinity', short: 'TRI', tag: 'Fine line, custom & blackwork', handle: '@trinity.dollas.tattoo', email: '', img: '/images/trinity.jpg', slug: 'trinity', work: 4 },
 ]
 
-export const reviews = [
-  { name: 'Hannah M.', text: 'Got my first piece with Oz and could not be happier. Spotless studio, zero pressure, and the linework is exactly what I asked for.' },
-  { name: 'Dylan R.', text: 'Tcharna nailed the brief from the first sketch. Professional from the consult right through to the aftercare instructions.' },
-  { name: 'Priya S.', text: 'Easily the best studio in Perth. Friendly crew, immaculate space, and the work genuinely speaks for itself.' },
-  { name: 'Marcus T.', text: 'Travelled across town for a session with Julian and it was worth every minute. Already booked my next sitting.' },
-  { name: 'Eleanor K.', text: 'So welcoming for a nervous first-timer. They talked me through everything and it healed beautifully.' },
+export interface Review {
+  name: string
+  text: string
+  photos?: string[]
+}
+
+export const reviews: Review[] = [
+  {
+    name: 'Andrea Nencini',
+    text: "I relied on Quinn to create a complex tattoo in a difficult spot. She helped me place the stencil with great care and patience. Even though we were late, she remained focused without rushing the process. She created a masterpiece, taking care of every detail. I'm very happy with how it turned out, and it's always a pleasure to have a cheerful and friendly girl tattoo you. I highly recommend her",
+    photos: ['/images/reviews/Andrea_Nencini_1.jpg', '/images/reviews/Andrea_Nencini_2.jpg'],
+  },
+  {
+    name: 'Anna Gregson',
+    text: "I've had 2 tattoos with Gypsy in the last month, 1 being a big back piece. The process was so easy and she got the exact design I was thinking of out my head and onto my back. Was a super comfortable experience and am absolutely obsessed with the results!",
+    photos: ['/images/reviews/Anna_Gregson_1.jpg'],
+  },
+  {
+    name: 'Katie Raeside',
+    text: "Had 2 tattoos done by Quinn, she is such a friendly person, who takes her time to give you the best for tattoos. I designed my own tattoo and she helped me bring it to life. I highly recommend Quinn especially if you're into cartoon characters. Absolutely love my tattoos thank you",
+    photos: ['/images/reviews/Katie_Raeside_1.jpg', '/images/reviews/Katie_Raeside_2.jpg'],
+  },
+  {
+    name: 'Jae',
+    text: 'Got my first tattoo here the day after my 18th by the amazing Quinn. She was so kind and I loved chatting with her! The whole vibe and atmosphere of the place is so chill, and the tattoo turned out absolutely amazing - shoutout to the one and only Quinn for my beautiful birthday tattoo!!!',
+    photos: ['/images/reviews/Jae_1.jpg'],
+  },
+  {
+    name: 'Shadow Dragon',
+    text: 'Me and my partner both got our tattoos from Julian here and are already thinking of our next tattoo ideas. Love the atmosphere and nice friendly faces. Everyone is so welcoming',
+    photos: ['/images/reviews/Shadow_Dragon_1.jpg', '/images/reviews/Shadow_Dragon_2.jpg'],
+  },
+  {
+    name: 'Esther',
+    text: "1st timer here... I didn't feel anxious, place had great crew, great vibe, clean, and all round nice experience.. will be back... loved it, lovely place you got going there.",
+    photos: ['/images/reviews/Esther_1.jpg', '/images/reviews/Esther_2.jpg', '/images/reviews/Esther_3.jpg'],
+  },
+  {
+    name: 'Tash R',
+    text: "I had my tattoo done by Aino and she did a superb job on a art piece that means a lot to me. She was gentle, friendly, and precise. The studio was bright and welcoming. I have to say it's the best place I've been to get my tattoo. Aino will be my new tattooist going forward. Thankyou!",
+    photos: ['/images/reviews/Tash_R_1.jpg'],
+  },
+  {
+    name: 'Freeah Hernandez',
+    text: 'Tcharna did amazing colour tattoos for me. Highly recommend to book in and share your ideas with her, really appreciated her being so accommodating with last minute changes to original designs. Very excited for my next booking. Superb work! Thank you Tcharna I love them!!',
+    photos: ['/images/reviews/Freeah_Hernandez_1.jpg'],
+  },
+  {
+    name: 'Keeley Johnson',
+    text: "Went here with my friend a few days ago. I absolutely love the result of my tattoo. Aino did a beautiful job and I can't thank her enough.",
+    photos: ['/images/reviews/Keeley_Johnson_1.jpg', '/images/reviews/Keeley_Johnson_2.jpg'],
+  },
+  {
+    name: 'Georgina Boyd',
+    text: "Today I got a new tattoo, I'm so happy with it. The Tattooist did an amazing job I'll definitely be going back. Also the Studio was beautifully set up so clean an staff were amazing",
+    photos: ['/images/reviews/Georgina_Boyd_1.jpg', '/images/reviews/Georgina_Boyd_2.jpg'],
+  },
 ]
 
 export const hours = [
