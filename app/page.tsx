@@ -43,7 +43,7 @@ export default function HomePage() {
           <Link href="/artists" className="hover-color-light" style={{ background: 'none', border: 'none', cursor: 'pointer', fontFamily: 'var(--font-space-mono), monospace', fontSize: 12.5, letterSpacing: '0.14em', textTransform: 'uppercase', color: '#B6B2AA', padding: 0, borderBottom: '1px solid rgba(236,232,225,0.3)', paddingBottom: 6, textDecoration: 'none' }}>All artists →</Link>
         </div>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill,minmax(248px,1fr))', gap: 'clamp(16px,2.4vw,34px)' }}>
-          {artists.slice(0, 6).map((a, i) => (
+          {artists.map((a, i) => (
             <Link key={a.slug} href={`/artists/${a.slug}`} style={{ textAlign: 'left', background: 'none', border: 'none', padding: 0, cursor: 'pointer', display: 'flex', flexDirection: 'column', gap: 14, textDecoration: 'none' }}>
               <div style={{ position: 'relative', aspectRatio: '4/5', overflow: 'hidden', background: '#141413', border: '1px solid rgba(236,232,225,0.1)', borderRadius: 10 }} className="artist-card-wrap">
                 <Image src={a.img} alt={a.name} fill sizes="(max-width:768px) 50vw, 25vw" className="artist-card-img" style={{ objectFit: 'cover' }} />
