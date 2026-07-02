@@ -31,6 +31,18 @@ select option { background: #0A0A0A; color: #ECE8E1; }
 .hover-color-light:hover  { color: #ECE8E1 !important; }
 .hover-color-white:hover  { color: #fff !important; }
 
+/* Home artist preview cards (grayscale → colour on hover, matching /artists) */
+.artist-card-wrap { transition: border-color 0.3s; }
+.artist-card-wrap:hover { border-color: rgba(236,232,225,0.4); }
+.artist-card-img {
+  filter: grayscale(1) contrast(1.03);
+  transition: transform 0.7s cubic-bezier(0.2,0,0.2,1), filter 0.7s ease;
+}
+.artist-card-wrap:hover .artist-card-img {
+  filter: grayscale(0) contrast(1.03);
+  transform: scale(1.05);
+}
+
 /* Footer social links */
 .footer-social {
   display: flex;
