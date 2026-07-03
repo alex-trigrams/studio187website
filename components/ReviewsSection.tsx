@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react'
 import Image from 'next/image'
 import { reviews } from '@/lib/data'
+import Reveal from '@/components/Reveal'
 
 function pad(n: number) { return String(n).padStart(2, '0') }
 
@@ -27,10 +28,12 @@ export default function ReviewsSection() {
   return (
     <section style={{ background: '#ECE8E1', color: '#0A0A0A', borderBottom: '1px solid rgba(10,10,10,0.12)' }}>
       <div style={{ maxWidth: 1320, margin: '0 auto', padding: 'clamp(72px,11vw,150px) clamp(20px,5vw,72px)' }}>
-        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', flexWrap: 'wrap', gap: 16, marginBottom: 'clamp(40px,6vw,72px)' }}>
-          <div style={{ fontFamily: 'var(--font-space-mono), monospace', fontSize: 12, letterSpacing: '0.18em', textTransform: 'uppercase', color: '#6b6760' }}>What our clients say</div>
-          <div style={{ fontFamily: 'var(--font-space-mono), monospace', fontSize: 12, letterSpacing: '0.1em', color: '#6b6760' }}>Google · {pad(idx + 1)} / {pad(n)}</div>
-        </div>
+        <Reveal>
+          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', flexWrap: 'wrap', gap: 16, marginBottom: 'clamp(40px,6vw,72px)' }}>
+            <div style={{ fontFamily: 'var(--font-space-mono), monospace', fontSize: 12, letterSpacing: '0.18em', textTransform: 'uppercase', color: '#6b6760' }}>What our clients say</div>
+            <div style={{ fontFamily: 'var(--font-space-mono), monospace', fontSize: 12, letterSpacing: '0.1em', color: '#6b6760' }}>Google · {pad(idx + 1)} / {pad(n)}</div>
+          </div>
+        </Reveal>
         <div style={{ overflow: 'hidden' }}>
           <div style={{ display: 'flex', transition: 'transform 0.55s cubic-bezier(0.7,0,0.2,1)', transform: `translateX(-${idx * 100}%)` }}>
             {reviews.map((r, i) => {

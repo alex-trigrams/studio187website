@@ -21,6 +21,7 @@ export default function MobileEnquireButton() {
       </div>
       <style>{`
         @media (max-width: 768px) { .mob-enquire-float { display: flex !important; } }
+        body.nav-menu-open .mob-enquire-float { display: none !important; }
       `}</style>
     </>
   )

@@ -3,6 +3,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { artists } from '@/lib/data'
 import WorkCarousel from '@/components/WorkCarousel'
+import Reveal from '@/components/Reveal'
 
 export function generateStaticParams() {
   return artists.map(a => ({ slug: a.slug }))
@@ -36,7 +37,7 @@ export default async function ArtistDetailPage({ params }: { params: Promise<{ s
       <Link href="/artists" className="nav-link" style={{ background: 'none', border: 'none', cursor: 'pointer', fontFamily: 'var(--font-space-mono), monospace', fontSize: 12, letterSpacing: '0.14em', textTransform: 'uppercase', color: '#9d988e', padding: 0, marginBottom: 'clamp(40px,6vw,64px)', display: 'inline-block', textDecoration: 'none' }}>← All artists</Link>
 
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(300px,1fr))', gap: 'clamp(40px,5vw,72px)', alignItems: 'start' }}>
-        <div style={{ position: 'sticky', top: 96 }}>
+        <div className="artist-sidebar load-in">
           <div style={{ fontFamily: 'var(--font-space-mono), monospace', fontSize: 12, letterSpacing: '0.16em', textTransform: 'uppercase', color: '#7d7970', marginBottom: 18 }}>Artist</div>
           <h1 style={{ fontFamily: 'var(--font-anton), sans-serif', fontWeight: 400, textTransform: 'uppercase', fontSize: 'clamp(40px,6.5vw,88px)', lineHeight: 0.9, margin: '0 0 18px', letterSpacing: '-0.005em' }}>{artist.name}</h1>
           <div style={{ fontFamily: 'var(--font-space-mono), monospace', fontSize: 13, letterSpacing: '0.06em', textTransform: 'uppercase', color: '#B6B2AA', marginBottom: 32 }}>{artist.tag}</div>
@@ -52,8 +53,15 @@ export default async function ArtistDetailPage({ params }: { params: Promise<{ s
           <Link href={`/contact?artist=${encodeURIComponent(artist.name)}`} className="hover-opacity" style={{ border: 'none', cursor: 'pointer', fontFamily: 'var(--font-space-mono), monospace', fontSize: 13, letterSpacing: '0.14em', textTransform: 'uppercase', padding: '16px 34px', background: '#ECE8E1', color: '#0A0A0A', textDecoration: 'none', display: 'inline-block', borderRadius: 8 }}>Enquire with {artist.first}</Link>
         </div>
 
-        <WorkCarousel artist={artist} />
+        <Reveal delay={120}>
+          <WorkCarousel artist={artist} />
+        </Reveal>
       </div>
+
+      <style>{`
+        .artist-sidebar { position: sticky; top: 96px; }
+        @media (max-width: 900px) { .artist-sidebar { position: static; } }
+      `}</style>
     </main>
   )
 }

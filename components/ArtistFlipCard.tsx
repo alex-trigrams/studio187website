@@ -1,3 +1,6 @@
+'use client'
+
+import { useState } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import type { Artist } from '@/lib/data'
@@ -16,19 +19,40 @@ function InstagramIcon() {
 
 export default function ArtistFlipCard({ artist, index }: { artist: Artist; index: number }) {
   const igUrl = `https://www.instagram.com/${artist.handle.replace('@', '')}/`
+  const [flipped, setFlipped] = useState(false)
 
   return (
     <div className={s.container}>
-      <div className={s.card}>
+      <div className={`${s.card} ${flipped ? s.flipped : ''}`}>
         {/* Front */}
         <Link href={`/artists/${artist.slug}`} className={s.front} style={{ textDecoration: 'none' }}>
           <Image src={artist.img} alt={artist.name} fill className={s.img} sizes="(max-width:768px) 50vw, 25vw" />
           <span style={{ position: 'absolute', top: 13, left: 15, fontFamily: 'var(--font-space-mono), monospace', fontSize: 11, letterSpacing: '0.1em', color: '#ECE8E1', mixBlendMode: 'difference' }}>{pad(index + 1)}</span>
-          <span style={{ position: 'absolute', bottom: 13, right: 14, fontFamily: 'var(--font-space-mono), monospace', fontSize: 9.5, letterSpacing: '0.14em', textTransform: 'uppercase', color: 'rgba(236,232,225,0.9)', background: 'rgba(10,10,10,0.5)', padding: '5px 9px' }}>Hover ↻</span>
+          <span
+            role="button"
+            tabIndex={0}
+            className={s.flipBtn}
+            aria-label={`Show ${artist.first}'s Instagram and recent work`}
+            onClick={(e) => { e.preventDefault(); e.stopPropagation(); setFlipped(true) }}
+            onKeyDown={(e) => {
+              if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); e.stopPropagation(); setFlipped(true) }
+            }}
+          >
+            <span className={s.flipHintDesktop}>Hover ↻</span>
+            <span className={s.flipHintMobile}>Tap ↻</span>
+          </span>
         </Link>
 
         {/* Back */}
         <div className={s.back}>
+          <button
+            type="button"
+            className={s.unflipBtn}
+            aria-label={`Back to ${artist.first}'s photo`}
+            onClick={() => setFlipped(false)}
+          >
+            ✕
+          </button>
           <div>
             <div style={{ fontFamily: 'var(--font-space-mono), monospace', fontSize: 10, letterSpacing: '0.14em', textTransform: 'uppercase', color: '#7d7970', marginBottom: 10 }}>Recent work</div>
             <Link href={`/artists/${artist.slug}`} style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 6, cursor: 'pointer', textDecoration: 'none' }}>

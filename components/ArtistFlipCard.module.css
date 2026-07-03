@@ -6,7 +6,10 @@
   transform-style: preserve-3d;
   transition: transform 0.75s cubic-bezier(0.4, 0, 0.2, 1);
 }
-.container:hover .card { transform: rotateY(180deg); }
+@media (hover: hover) and (pointer: fine) {
+  .container:hover .card { transform: rotateY(180deg); }
+}
+.card.flipped { transform: rotateY(180deg); }
 
 .front, .back {
   position: absolute;
@@ -52,3 +55,52 @@
 
 .viewBtn { transition: opacity 0.2s; }
 .viewBtn:hover { opacity: 0.85; }
+
+.flipBtn {
+  position: absolute;
+  bottom: 13px;
+  right: 14px;
+  border: none;
+  cursor: pointer;
+  font-family: var(--font-space-mono), monospace;
+  font-size: 9.5px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(236,232,225,0.9);
+  background: rgba(10,10,10,0.5);
+  padding: 5px 9px;
+  border-radius: 4px;
+  z-index: 2;
+  transition: background 0.2s;
+}
+.flipBtn:hover { background: rgba(10,10,10,0.7); }
+
+.flipHintMobile { display: inline; }
+.flipHintDesktop { display: none; }
+@media (hover: hover) and (pointer: fine) {
+  .flipHintMobile { display: none; }
+  .flipHintDesktop { display: inline; }
+}
+
+.unflipBtn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 30px;
+  height: 30px;
+  border: none;
+  border-radius: 50%;
+  background: rgba(236,232,225,0.08);
+  color: #ECE8E1;
+  font-size: 13px;
+  line-height: 1;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s;
+}
+.unflipBtn:hover { background: rgba(236,232,225,0.18); }
+@media (hover: hover) and (pointer: fine) {
+  .unflipBtn { display: none; }
+}

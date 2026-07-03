@@ -17,6 +17,35 @@ select option { background: #0A0A0A; color: #ECE8E1; }
   to   { opacity: 1; transform: none; }
 }
 
+@keyframes s187rise {
+  from { opacity: 0; transform: translateY(22px); }
+  to   { opacity: 1; transform: none; }
+}
+
+@keyframes s187zoom {
+  from { transform: scale(1.08); }
+  to   { transform: scale(1); }
+}
+
+/* Page-load entrance animation (hero + any "load in" content) */
+.load-in {
+  opacity: 0;
+  animation: s187rise 0.9s cubic-bezier(0.16,1,0.3,1) forwards;
+}
+
+/* Scroll-triggered reveal — toggled by the Reveal component via IntersectionObserver */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.8s cubic-bezier(0.16,1,0.3,1), transform 0.8s cubic-bezier(0.16,1,0.3,1);
+  will-change: opacity, transform;
+}
+.reveal-visible { opacity: 1; transform: none; }
+
+@media (prefers-reduced-motion: reduce) {
+  .load-in, .reveal { animation: none !important; opacity: 1 !important; transform: none !important; transition: none !important; }
+}
+
 /* Scroll snap container */
 [data-reels]::-webkit-scrollbar { display: none; }
 

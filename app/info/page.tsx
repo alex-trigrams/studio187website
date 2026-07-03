@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import { aftercareItems, depositItems, hours } from '@/lib/data'
+import Reveal from '@/components/Reveal'
 
 export const metadata = {
   title: 'Info — Studio 187 Tattoo',
@@ -35,9 +36,9 @@ export default function InfoPage() {
 
       {/* ── Header ── */}
       <section style={{ maxWidth: 1320, margin: '0 auto', padding: 'clamp(60px,9vw,100px) clamp(20px,5vw,72px) clamp(40px,5vw,56px)', borderBottom: '1px solid rgba(236,232,225,0.13)' }}>
-        <div style={{ fontFamily: 'var(--font-space-mono), monospace', fontSize: 12, letterSpacing: '0.18em', textTransform: 'uppercase', color: '#7d7970', marginBottom: 18 }}>Studio 187</div>
-        <h1 style={{ fontFamily: 'var(--font-anton), sans-serif', fontWeight: 400, textTransform: 'uppercase', fontSize: 'clamp(52px,12vw,160px)', lineHeight: 0.88, margin: '0 0 28px', letterSpacing: '-0.01em' }}>Info</h1>
-        <p style={{ fontFamily: 'var(--font-archivo), sans-serif', fontSize: 'clamp(15px,1.4vw,18px)', color: '#87837B', maxWidth: 560, lineHeight: 1.6, margin: 0 }}>
+        <div className="load-in" style={{ fontFamily: 'var(--font-space-mono), monospace', fontSize: 12, letterSpacing: '0.18em', textTransform: 'uppercase', color: '#7d7970', marginBottom: 18 }}>Studio 187</div>
+        <h1 className="load-in" style={{ animationDelay: '0.1s', fontFamily: 'var(--font-anton), sans-serif', fontWeight: 400, textTransform: 'uppercase', fontSize: 'clamp(52px,12vw,160px)', lineHeight: 0.88, margin: '0 0 28px', letterSpacing: '-0.01em' }}>Info</h1>
+        <p className="load-in" style={{ animationDelay: '0.2s', fontFamily: 'var(--font-archivo), sans-serif', fontSize: 'clamp(15px,1.4vw,18px)', color: '#87837B', maxWidth: 560, lineHeight: 1.6, margin: 0 }}>
           Everything you need to know before, during and after your tattoo — aftercare, bookings, deposits, and studio details.
         </p>
       </section>
@@ -46,6 +47,7 @@ export default function InfoPage() {
       <section style={{ maxWidth: 860, margin: '0 auto', padding: 'clamp(48px,7vw,80px) clamp(20px,5vw,72px)', display: 'flex', flexDirection: 'column', gap: 'clamp(40px,5vw,60px)' }}>
 
         {/* Aftercare */}
+        <Reveal>
         <InfoBlock number="01" title="Aftercare">
           <p style={{ fontSize: 16, lineHeight: 1.7, color: '#87837B', margin: '0 0 20px', maxWidth: 560 }}>
             Your tattoo is a fresh wound — how you look after it in the first couple of weeks makes a real difference to how it heals and how it looks long term.
@@ -57,8 +59,10 @@ export default function InfoPage() {
             <span style={{ fontFamily: 'var(--font-space-mono), monospace', fontSize: 12, letterSpacing: '0.08em', color: '#7d7970' }}>Still not sure? Message your artist directly — they&apos;re happy to help.</span>
           </div>
         </InfoBlock>
+        </Reveal>
 
         {/* Deposits & T&Cs */}
+        <Reveal>
         <InfoBlock number="02" title="Deposits & Booking">
           <p style={{ fontSize: 16, lineHeight: 1.7, color: '#87837B', margin: '0 0 20px', maxWidth: 560 }}>
             A deposit is required to lock in your appointment. Here&apos;s how it works.
@@ -67,8 +71,10 @@ export default function InfoPage() {
             {depositItems.map((item, i) => <ListItem key={i} text={item} />)}
           </div>
         </InfoBlock>
+        </Reveal>
 
         {/* What to bring */}
+        <Reveal>
         <InfoBlock number="03" title="What to Bring">
           <div>
             {[
@@ -80,8 +86,10 @@ export default function InfoPage() {
             ].map((item, i) => <ListItem key={i} text={item} />)}
           </div>
         </InfoBlock>
+        </Reveal>
 
         {/* Studio info */}
+        <Reveal>
         <InfoBlock number="04" title="Studio">
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(240px,1fr))', gap: 'clamp(32px,4vw,56px)' }}>
             <div>
@@ -110,6 +118,7 @@ export default function InfoPage() {
             </div>
           </div>
         </InfoBlock>
+        </Reveal>
 
       </section>
 

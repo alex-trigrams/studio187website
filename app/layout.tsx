@@ -28,13 +28,16 @@ const spaceMono = Space_Mono({
 
 export const metadata: Metadata = {
   title: 'Studio 187 Tattoo | Maylands, Western Australia',
-  description: 'Nine resident tattoo artists in Maylands, WA. Fine line, traditional, blackwork, realism and more. Walk-ins welcome. 187 Guildford Road.',
+  description: 'Ten resident tattoo artists in Maylands, WA. Fine line, traditional, blackwork, realism and more. Walk-ins welcome. 187 Guildford Road.',
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" className={`${anton.variable} ${archivo.variable} ${spaceMono.variable}`}>
       <body style={{ fontFamily: 'var(--font-archivo), sans-serif', background: '#0A0A0A', color: '#ECE8E1' }}>
+        <noscript>
+          <style>{`.reveal, .load-in { opacity: 1 !important; transform: none !important; animation: none !important; }`}</style>
+        </noscript>
         <Nav />
         {children}
         <Footer />
