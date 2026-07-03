@@ -38,21 +38,18 @@ export default function ContactForm() {
     e.preventDefault()
     const errs: Errors = {}
     if (!form.name.trim()) errs.name = 'Please add your name'
-    if (!form.contact.trim()) { errs.contact = 'Add a phone or email so we can reply' }
-    else if (form.contact.includes('@')) { if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.contact.trim())) errs.contact = 'That email looks incomplete' }
+    if (!form.contact.trim()) { errs.contact = 'Add a phone number so we can reply' }
     else if (form.contact.replace(/[^0-9]/g, '').length < 8) { errs.contact = 'That phone number looks too short' }
     if (!form.idea.trim()) errs.idea = 'Tell us a little about the idea'
     if (Object.keys(errs).length) { setErrors(errs); return }
 
     setSubmitting(true)
-    const isEmail = form.contact.includes('@') && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.contact.trim())
     const payload: Record<string, string> = {
       _subject: 'Website Inquiry' + (form.artist ? ` — ${form.artist}` : ''),
       name: form.name, contact: form.contact, idea: form.idea,
     }
     if (form.budget) payload.budget = form.budget
     if (form.artist) payload.artist = form.artist
-    if (isEmail) payload._replyto = form.contact.trim()
 
     try {
       const r = await fetch('https://formspree.io/f/xykaqvpd', {
@@ -69,7 +66,7 @@ export default function ContactForm() {
     <div style={{ border: '1px solid rgba(236,232,225,0.18)', padding: 'clamp(28px,4vw,44px)', animation: 's187fade 0.5s ease' }}>
       <div style={{ color: '#ECE8E1', fontFamily: 'var(--font-space-mono), monospace', fontSize: 12, letterSpacing: '0.16em', textTransform: 'uppercase', marginBottom: 18 }}>✓ Enquiry received</div>
       <h2 style={{ fontFamily: 'var(--font-anton), sans-serif', fontWeight: 400, textTransform: 'uppercase', fontSize: 'clamp(28px,4vw,44px)', lineHeight: 0.96, margin: '0 0 24px' }}>Thanks, {form.name}</h2>
-      <p style={{ fontSize: 16, lineHeight: 1.6, color: '#B6B2AA', margin: '0 0 28px' }}>A confirmation is on its way to <strong style={{ color: '#ECE8E1' }}>{form.contact}</strong>. Here&apos;s what it covers:</p>
+      <p style={{ fontSize: 16, lineHeight: 1.6, color: '#B6B2AA', margin: '0 0 28px' }}>We&apos;ll call or text you at <strong style={{ color: '#ECE8E1' }}>{form.contact}</strong> shortly. Here&apos;s what to expect:</p>
       {confirmPoints.map(c => (
         <div key={c.n} style={{ display: 'flex', gap: 16, padding: '14px 0', borderTop: '1px solid rgba(236,232,225,0.1)' }}>
           <span style={{ fontFamily: 'var(--font-space-mono), monospace', fontSize: 11, color: '#7d7970', flex: '0 0 auto', paddingTop: 3 }}>{c.n}</span>
@@ -86,12 +83,12 @@ export default function ContactForm() {
   return (
     <form onSubmit={submit}>
       {[
-        { key: 'name' as const, label: 'Name *', placeholder: 'Your name', type: 'input' },
-        { key: 'contact' as const, label: 'Phone or email *', placeholder: 'So we can reply', type: 'input' },
+        { key: 'name' as const, label: 'Name *', placeholder: 'Your name', inputType: 'text' },
+        { key: 'contact' as const, label: 'Phone number *', placeholder: 'So we can call or text you', inputType: 'tel' },
       ].map(f => (
         <div key={f.key} style={{ marginBottom: 30 }}>
           <label style={labelStyle}>{f.label}</label>
-          <input value={form[f.key]} onChange={field(f.key)} placeholder={f.placeholder} style={inputStyle} />
+          <input type={f.inputType} value={form[f.key]} onChange={field(f.key)} placeholder={f.placeholder} style={inputStyle} />
           {errors[f.key] && <div style={{ fontFamily: 'var(--font-space-mono), monospace', fontSize: 11, color: '#C0392B', marginTop: 8 }}>{errors[f.key]}</div>}
         </div>
       ))}
@@ -122,7 +119,7 @@ export default function ContactForm() {
       <button type="submit" disabled={submitting} className="hover-opacity" style={{ border: 'none', cursor: 'pointer', fontFamily: 'var(--font-space-mono), monospace', fontSize: 13, letterSpacing: '0.14em', textTransform: 'uppercase', padding: '17px 40px', background: '#ECE8E1', color: '#0A0A0A', width: '100%', borderRadius: 8 }}>
         {submitting ? 'Sending…' : 'Send enquiry'}
       </button>
-      <p style={{ fontFamily: 'var(--font-space-mono), monospace', fontSize: 11, letterSpacing: '0.04em', color: '#56524B', marginTop: 18, lineHeight: 1.6 }}>You&apos;ll get an instant confirmation email with deposit, aftercare &amp; what to bring.</p>
+      <p style={{ fontFamily: 'var(--font-space-mono), monospace', fontSize: 11, letterSpacing: '0.04em', color: '#56524B', marginTop: 18, lineHeight: 1.6 }}>We&apos;ll call or text you back with deposit, aftercare &amp; what to bring.</p>
     </form>
   )
 }
