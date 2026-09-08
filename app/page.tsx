@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { artists, hours, aftercareItems, depositItems } from '@/lib/data'
+import GallerySection from '@/components/GallerySection'
 import ReviewsSection from '@/components/ReviewsSection'
 import Reveal from '@/components/Reveal'
 
@@ -29,7 +30,8 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ── Gallery ── hidden until real photos are ready, see project roadmap */}
+      {/* ── Gallery ── */}
+      <GallerySection />
 
       {/* ── Reviews ── */}
       <ReviewsSection />

@@ -146,4 +146,16 @@ export interface GalleryImage {
 // To add work: drop the image in /public/images/gallery/ and add one entry below.
 export const galleryImages: GalleryImage[] = [
   // { src: '/images/gallery/filename.jpg', alt: 'Brief description', artist: 'Oz' },
+  { src: '/images/gallery/quinn-08.jpg', alt: 'Black and grey koi fish and floral leg piece', artist: 'Quinn' },
+  { src: '/images/gallery/quinn-12.jpg', alt: 'Memento Mori hourglass with skull and tree, black and grey', artist: 'Quinn' },
+  { src: '/images/gallery/quinn-07.jpg', alt: 'Fine line lilies and blossoms forearm piece', artist: 'Quinn' },
+  { src: '/images/gallery/quinn-10.jpg', alt: 'Matching lion and lioness arrow forearm tattoos', artist: 'Quinn' },
+  { src: '/images/gallery/quinn-06.jpg', alt: 'Fine line shark, turtle and hibiscus hand tattoo', artist: 'Quinn' },
+  { src: '/images/gallery/quinn-05.jpg', alt: 'Blackwork skull and thorns knee tattoo', artist: 'Quinn' },
+  { src: '/images/gallery/quinn-03.jpg', alt: 'Colour baby dragon reading a book', artist: 'Quinn' },
+  { src: '/images/gallery/quinn-04.jpg', alt: 'Matilda surrounded by stacks of books, colour illustration style', artist: 'Quinn' },
+  { src: '/images/gallery/quinn-02.jpg', alt: 'Colour Mad Hatter cartoon forearm tattoo', artist: 'Quinn' },
+  { src: '/images/gallery/quinn-09.jpg', alt: 'Winnie the Pooh with honey pot, colour', artist: 'Quinn' },
+  { src: '/images/gallery/quinn-11.jpg', alt: 'Mickey Mouse tipping his hat, colour forearm tattoo', artist: 'Quinn' },
+  { src: '/images/gallery/quinn-01.jpg', alt: 'Quinn tattooing a mandala piece at Studio 187', artist: 'Quinn' },
 ]
