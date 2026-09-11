@@ -4,6 +4,7 @@ import { artists, hours, aftercareItems, depositItems } from '@/lib/data'
 import GallerySection from '@/components/GallerySection'
 import ReviewsSection from '@/components/ReviewsSection'
 import Reveal from '@/components/Reveal'
+import ArtistFlipCard from '@/components/ArtistFlipCard'
 
 function pad(n: number) { return String(n).padStart(2, '0') }
 
@@ -50,16 +51,7 @@ export default function HomePage() {
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill,minmax(248px,1fr))', gap: 'clamp(16px,2.4vw,34px)' }}>
           {artists.map((a, i) => (
             <Reveal key={a.slug} delay={(i % 4) * 70}>
-              <Link href={`/artists/${a.slug}`} style={{ textAlign: 'left', background: 'none', border: 'none', padding: 0, cursor: 'pointer', display: 'flex', flexDirection: 'column', gap: 14, textDecoration: 'none' }}>
-                <div style={{ position: 'relative', aspectRatio: '4/5', overflow: 'hidden', background: '#141413', border: '1px solid rgba(236,232,225,0.1)', borderRadius: 10 }} className="artist-card-wrap">
-                  <Image src={a.img} alt={a.name} fill sizes="(max-width:768px) 50vw, 25vw" className="artist-card-img" style={{ objectFit: 'cover' }} />
-                  <span style={{ position: 'absolute', top: 12, left: 14, fontFamily: 'var(--font-space-mono), monospace', fontSize: 11, letterSpacing: '0.1em', color: '#ECE8E1', mixBlendMode: 'difference' }}>{pad(i + 1)}</span>
-                </div>
-                <div>
-                  <div style={{ fontFamily: 'var(--font-archivo), sans-serif', fontWeight: 700, fontSize: 19, letterSpacing: '0.01em', color: '#ECE8E1' }}>{a.name}</div>
-                  <div style={{ fontFamily: 'var(--font-space-mono), monospace', fontSize: 11, letterSpacing: '0.08em', textTransform: 'uppercase', color: '#9d988e', marginTop: 5 }}>{a.tag}</div>
-                </div>
-              </Link>
+              <ArtistFlipCard artist={a} index={i} />
             </Reveal>
           ))}
         </div>

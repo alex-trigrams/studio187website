@@ -3,7 +3,7 @@
 import { useState } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
-import type { Artist } from '@/lib/data'
+import { workByArtist, type Artist } from '@/lib/data'
 import s from './ArtistFlipCard.module.css'
 
 function pad(n: number) { return String(n).padStart(2, '0') }
@@ -19,6 +19,7 @@ function InstagramIcon() {
 
 export default function ArtistFlipCard({ artist, index }: { artist: Artist; index: number }) {
   const igUrl = `https://www.instagram.com/${artist.handle.replace('@', '')}/`
+  const work = workByArtist(artist).slice(0, 4)
   const [flipped, setFlipped] = useState(false)
 
   return (
@@ -56,11 +57,17 @@ export default function ArtistFlipCard({ artist, index }: { artist: Artist; inde
           <div>
             <div style={{ fontFamily: 'var(--font-space-mono), monospace', fontSize: 10, letterSpacing: '0.14em', textTransform: 'uppercase', color: '#7d7970', marginBottom: 10 }}>Recent work</div>
             <Link href={`/artists/${artist.slug}`} style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 6, cursor: 'pointer', textDecoration: 'none' }}>
-              {[1, 2, 3, 4].map(n => (
-                <div key={n} style={{ aspectRatio: '1', backgroundColor: '#1b1b1a', backgroundImage: 'repeating-linear-gradient(135deg,rgba(236,232,225,0.05) 0 1px,transparent 1px 12px)', display: 'flex', alignItems: 'center', justifyContent: 'center', borderRadius: 6, overflow: 'hidden', fontFamily: 'var(--font-space-mono), monospace', fontSize: 8.5, letterSpacing: '0.1em', color: '#56524B' }}>
-                  {artist.short} {pad(n)}
-                </div>
-              ))}
+              {work.length > 0
+                ? work.map(img => (
+                    <div key={img.src} style={{ position: 'relative', aspectRatio: '1', backgroundColor: '#1b1b1a', borderRadius: 6, overflow: 'hidden' }}>
+                      <Image src={img.src} alt={img.alt} fill style={{ objectFit: 'cover' }} sizes="120px" />
+                    </div>
+                  ))
+                : [1, 2, 3, 4].map(n => (
+                    <div key={n} style={{ aspectRatio: '1', backgroundColor: '#1b1b1a', backgroundImage: 'repeating-linear-gradient(135deg,rgba(236,232,225,0.05) 0 1px,transparent 1px 12px)', display: 'flex', alignItems: 'center', justifyContent: 'center', borderRadius: 6, overflow: 'hidden', fontFamily: 'var(--font-space-mono), monospace', fontSize: 8.5, letterSpacing: '0.1em', color: '#56524B' }}>
+                      {artist.short} {pad(n)}
+                    </div>
+                  ))}
             </Link>
           </div>
           <div>
@@ -71,6 +78,11 @@ export default function ArtistFlipCard({ artist, index }: { artist: Artist; inde
                 <span style={{ fontFamily: 'var(--font-space-mono), monospace', fontSize: 9, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#9d988e' }}>View on Instagram</span>
               </span>
             </a>
+            {artist.booking && (
+              <a href={artist.booking} target="_blank" rel="noopener" className={s.bookBtn} style={{ width: '100%', marginTop: 8, border: '1px solid rgba(236,232,225,0.4)', color: '#ECE8E1', fontFamily: 'var(--font-space-mono), monospace', fontSize: 10.5, letterSpacing: '0.12em', textTransform: 'uppercase', padding: '10px 0', display: 'block', textAlign: 'center', textDecoration: 'none', borderRadius: 4 }}>
+                Book with {artist.first} →
+              </a>
+            )}
             <Link href={`/artists/${artist.slug}`} className={s.viewBtn} style={{ width: '100%', marginTop: 8, background: '#ECE8E1', color: '#0A0A0A', border: 'none', cursor: 'pointer', fontFamily: 'var(--font-space-mono), monospace', fontSize: 10.5, letterSpacing: '0.12em', textTransform: 'uppercase', padding: '11px 0', display: 'block', textAlign: 'center', textDecoration: 'none' }}>
               View profile →
             </Link>

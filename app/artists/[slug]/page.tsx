@@ -50,7 +50,12 @@ export default async function ArtistDetailPage({ params }: { params: Promise<{ s
             {artist.email && <span style={{ fontFamily: 'var(--font-space-mono), monospace', fontSize: 13, color: '#9d988e' }}>{artist.email}</span>}
           </div>
 
-          <Link href={`/contact?artist=${encodeURIComponent(artist.name)}`} className="hover-opacity" style={{ border: 'none', cursor: 'pointer', fontFamily: 'var(--font-space-mono), monospace', fontSize: 13, letterSpacing: '0.14em', textTransform: 'uppercase', padding: '16px 34px', background: '#ECE8E1', color: '#0A0A0A', textDecoration: 'none', display: 'inline-block', borderRadius: 8 }}>Enquire with {artist.first}</Link>
+          <div style={{ display: 'flex', flexWrap: 'wrap', gap: 12 }}>
+            <Link href={`/contact?artist=${encodeURIComponent(artist.name)}`} className="hover-opacity" style={{ border: 'none', cursor: 'pointer', fontFamily: 'var(--font-space-mono), monospace', fontSize: 13, letterSpacing: '0.14em', textTransform: 'uppercase', padding: '16px 34px', background: '#ECE8E1', color: '#0A0A0A', textDecoration: 'none', display: 'inline-block', borderRadius: 8 }}>Enquire with {artist.first}</Link>
+            {artist.booking && (
+              <a href={artist.booking} target="_blank" rel="noopener" className="hover-border-light" style={{ cursor: 'pointer', fontFamily: 'var(--font-space-mono), monospace', fontSize: 13, letterSpacing: '0.14em', textTransform: 'uppercase', padding: '16px 34px', background: 'transparent', color: '#ECE8E1', border: '1px solid rgba(236,232,225,0.4)', textDecoration: 'none', display: 'inline-block', borderRadius: 8 }}>Book online →</a>
+            )}
+          </div>
         </div>
 
         <Reveal delay={120}>

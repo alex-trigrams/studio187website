@@ -104,3 +104,6 @@
 @media (hover: hover) and (pointer: fine) {
   .unflipBtn { display: none; }
 }
+
+.bookBtn { transition: background 0.2s, border-color 0.2s; }
+.bookBtn:hover { background: rgba(236,232,225,0.1); border-color: rgba(236,232,225,0.7) !important; }
