@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import { workByArtist, type Artist } from '@/lib/data'
@@ -22,12 +22,23 @@ export default function ArtistFlipCard({ artist, index }: { artist: Artist; inde
   const work = workByArtist(artist).slice(0, 4)
   const [flipped, setFlipped] = useState(false)
 
+  // Slowly cycle through photos of the artist when more than one is provided.
+  const photos = [artist.img, ...(artist.altImgs ?? [])]
+  const [photoIdx, setPhotoIdx] = useState(0)
+  useEffect(() => {
+    if (photos.length < 2) return
+    const id = setInterval(() => setPhotoIdx(i => (i + 1) % photos.length), 5000)
+    return () => clearInterval(id)
+  }, [photos.length])
+
   return (
     <div className={s.container}>
       <div className={`${s.card} ${flipped ? s.flipped : ''}`}>
         {/* Front */}
         <Link href={`/artists/${artist.slug}`} className={s.front} style={{ textDecoration: 'none' }}>
-          <Image src={artist.img} alt={artist.name} fill className={s.img} sizes="(max-width:768px) 50vw, 25vw" />
+          {photos.map((src, i) => (
+            <Image key={src} src={src} alt={i === 0 ? artist.name : ''} fill className={`${s.img} ${i === photoIdx ? s.imgActive : ''}`} sizes="(max-width:768px) 50vw, 25vw" priority={i === 0 && index < 4} />
+          ))}
           <span style={{ position: 'absolute', top: 13, left: 15, fontFamily: 'var(--font-space-mono), monospace', fontSize: 11, letterSpacing: '0.1em', color: '#ECE8E1', mixBlendMode: 'difference' }}>{pad(index + 1)}</span>
           <span
             role="button"

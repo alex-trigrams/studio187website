@@ -48,7 +48,7 @@ export default function HomePage() {
             <Link href="/artists" className="hover-color-light" style={{ background: 'none', border: 'none', cursor: 'pointer', fontFamily: 'var(--font-space-mono), monospace', fontSize: 12.5, letterSpacing: '0.14em', textTransform: 'uppercase', color: '#B6B2AA', padding: 0, borderBottom: '1px solid rgba(236,232,225,0.3)', paddingBottom: 6, textDecoration: 'none' }}>All artists →</Link>
           </div>
         </Reveal>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill,minmax(248px,1fr))', gap: 'clamp(16px,2.4vw,34px)' }}>
+        <div className="artist-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill,minmax(248px,1fr))', gap: 'clamp(16px,2.4vw,34px)' }}>
           {artists.map((a, i) => (
             <Reveal key={a.slug} delay={(i % 4) * 70}>
               <ArtistFlipCard artist={a} index={i} />
@@ -71,8 +71,8 @@ export default function HomePage() {
               </div>
             </Reveal>
             <Reveal delay={120}>
-              <div style={{ position: 'relative', aspectRatio: '4/5', backgroundColor: '#ddd9d0', backgroundImage: 'repeating-linear-gradient(135deg,rgba(10,10,10,0.05) 0 1px,transparent 1px 18px)', border: '1px solid rgba(10,10,10,0.14)' }}>
-                <span style={{ position: 'absolute', inset: 0, display: 'flex', alignItems: 'center', justifyContent: 'center', fontFamily: 'var(--font-space-mono), monospace', fontSize: 12, letterSpacing: '0.16em', textTransform: 'uppercase', color: '#9b958a', textAlign: 'center', padding: '0 24px' }}>Private room photo</span>
+              <div style={{ position: 'relative', aspectRatio: '4/5', backgroundColor: '#ddd9d0', border: '1px solid rgba(10,10,10,0.14)', overflow: 'hidden' }}>
+                <Image src="/images/private-room.jpg" alt="The private tattoo room at Studio 187" fill sizes="(max-width:768px) 100vw, 50vw" style={{ objectFit: 'cover' }} />
                 <span style={{ position: 'absolute', top: 14, left: 15, fontFamily: 'var(--font-space-mono), monospace', fontSize: 10, letterSpacing: '0.14em', textTransform: 'uppercase', color: '#0A0A0A', background: 'rgba(236,232,225,0.7)', padding: '6px 10px' }}>Private room</span>
               </div>
             </Reveal>

@@ -12,8 +12,8 @@ export default function GalleryMarquee({ images = galleryImages }: { images?: Ga
 
   const half = Math.ceil(images.length / 2)
   const rows: Array<{ items: GalleryImage[]; reverse: boolean; duration: number }> = [
-    { items: images.slice(0, half), reverse: false, duration: 60 },
-    { items: images.slice(half), reverse: true, duration: 72 },
+    { items: images.slice(0, half), reverse: false, duration: 120 },
+    { items: images.slice(half), reverse: true, duration: 140 },
   ].filter(r => r.items.length > 0)
 
   return (
