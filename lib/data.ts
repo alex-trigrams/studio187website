@@ -16,6 +16,8 @@ export interface Artist {
 // misplaced and don't match the artist's actual work. Confirmed wrong so far:
 //   - Gypsy: listed as 'Anime & colour' but her portfolio is dark blackwork /
 //     gothic illustrative portraiture.
+//   - Aino: listed as 'Japanese & ornamental' but her gallery is fine line
+//     botanical / delicate black and grey work.
 // Check the rest against each artist's Instagram before the next deploy.
 export const artists: Artist[] = [
   { name: 'Orazio (Oz)', first: 'Oz', short: 'OZ', tag: 'Fine line & script', handle: '@oztattooist', email: 'oraziotattooooo@gmail.com', img: '/images/oz.jpg', slug: 'oz', work: 4 },
@@ -154,25 +156,31 @@ export interface GalleryImage {
 export const galleryImages: GalleryImage[] = [
   // { src: '/images/gallery/filename.jpg', alt: 'Brief description', artist: 'Oz' },
   { src: '/images/gallery/quinn-08.jpg', alt: 'Black and grey koi fish and floral leg piece', artist: 'Quinn' },
+  { src: '/images/gallery/aino-01.jpg', alt: 'Fine line lilies with dotwork flourishes, shoulder and upper arm', artist: 'Aino' },
   { src: '/images/gallery/gypsy-01.jpg', alt: 'Black and grey Wednesday Addams portrait with graveyard, forearm', artist: 'Gypsy' },
   { src: '/images/gallery/quinn-12.jpg', alt: 'Memento Mori hourglass with skull and tree, black and grey', artist: 'Quinn' },
   { src: '/images/gallery/gypsy-02.jpg', alt: 'Blackwork doll in a mask and harness, forearm', artist: 'Gypsy' },
   { src: '/images/gallery/quinn-07.jpg', alt: 'Fine line lilies and blossoms forearm piece', artist: 'Quinn' },
+  { src: '/images/gallery/aino-02.jpg', alt: 'Delicate fine line leafy vine wrapping the shoulder and collarbone', artist: 'Aino' },
   { src: '/images/gallery/gypsy-03.jpg', alt: 'Illustrative doll portrait with moth wings, upper arm', artist: 'Gypsy' },
   { src: '/images/gallery/quinn-10.jpg', alt: 'Matching lion and lioness arrow forearm tattoos', artist: 'Quinn' },
   { src: '/images/gallery/gypsy-04.jpg', alt: 'Solid blackwork anatomical heart with a crying eye', artist: 'Gypsy' },
   { src: '/images/gallery/quinn-06.jpg', alt: 'Fine line shark, turtle and hibiscus hand tattoo', artist: 'Quinn' },
+  { src: '/images/gallery/aino-03.jpg', alt: 'Fine line cherry blossom branch on the forearm', artist: 'Aino' },
   { src: '/images/gallery/gypsy-05.jpg', alt: "Blackwork cleaver with a woman's face in the blade, calf", artist: 'Gypsy' },
   { src: '/images/gallery/quinn-05.jpg', alt: 'Blackwork skull and thorns knee tattoo', artist: 'Quinn' },
   { src: '/images/gallery/gypsy-06.jpg', alt: 'Gypsy at Studio 187 showing her blackout ornamental leg piece', artist: 'Gypsy' },
   { src: '/images/gallery/quinn-03.jpg', alt: 'Colour baby dragon reading a book', artist: 'Quinn' },
+  { src: '/images/gallery/aino-04.jpg', alt: 'Praying skeleton in fine line black and grey, shin', artist: 'Aino' },
   { src: '/images/gallery/gypsy-07.jpg', alt: 'Gypsy tattooing a floral leg piece at Studio 187', artist: 'Gypsy' },
   { src: '/images/gallery/quinn-04.jpg', alt: 'Matilda surrounded by stacks of books, colour illustration style', artist: 'Quinn' },
   { src: '/images/gallery/gypsy-08.jpg', alt: 'Gypsy at work in the Studio 187 tattoo room', artist: 'Gypsy' },
   { src: '/images/gallery/quinn-02.jpg', alt: 'Colour Mad Hatter cartoon forearm tattoo', artist: 'Quinn' },
+  { src: '/images/gallery/aino-05.jpg', alt: 'Smoky crescent moon and stars with script down the spine', artist: 'Aino' },
   { src: '/images/gallery/gypsy-09.jpg', alt: 'Gypsy tattooing under the ring light at Studio 187', artist: 'Gypsy' },
   { src: '/images/gallery/quinn-09.jpg', alt: 'Winnie the Pooh with honey pot, colour', artist: 'Quinn' },
   { src: '/images/gallery/quinn-11.jpg', alt: 'Mickey Mouse tipping his hat, colour forearm tattoo', artist: 'Quinn' },
+  { src: '/images/gallery/aino-06.jpg', alt: 'Fine line lily and blossom bouquet with a gecko, upper arm', artist: 'Aino' },
   { src: '/images/gallery/quinn-01.jpg', alt: 'Quinn tattooing a mandala piece at Studio 187', artist: 'Quinn' },
 ]
 
