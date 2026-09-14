@@ -61,11 +61,11 @@ export default function Nav() {
     }}>
       <div style={{
         maxWidth: 1320, margin: '0 auto',
-        padding: '16px clamp(20px,5vw,72px)',
+        padding: '10px clamp(20px,5vw,72px)',
         display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 20,
       }}>
         <Link href="/" style={{ background: 'none', border: 'none', padding: 0, cursor: 'pointer', display: 'flex', alignItems: 'center', textDecoration: 'none', flexShrink: 0 }}>
-          <Image src="/images/logo.jpg" alt="Studio 187 Tattoo" width={66} height={66} style={{ objectFit: 'contain', filter: 'invert(1)', mixBlendMode: 'screen' }} />
+          <Image src="/images/logo.jpg" alt="Studio 187 Tattoo" width={132} height={132} style={{ objectFit: 'contain', filter: 'invert(1)', mixBlendMode: 'screen' }} />
         </Link>
 
         {/* ── Desktop nav ── */}
