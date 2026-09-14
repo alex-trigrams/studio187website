@@ -65,7 +65,7 @@ export default function Nav() {
         display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 20,
       }}>
         <Link href="/" style={{ background: 'none', border: 'none', padding: 0, cursor: 'pointer', display: 'flex', alignItems: 'center', textDecoration: 'none', flexShrink: 0 }}>
-          <Image src="/images/logo.jpg" alt="Studio 187 Tattoo" width={132} height={132} style={{ objectFit: 'contain', filter: 'invert(1)', mixBlendMode: 'screen' }} />
+          <Image src="/images/logo.jpg" alt="Studio 187 Tattoo" width={100} height={100} style={{ objectFit: 'contain', filter: 'invert(1)', mixBlendMode: 'screen' }} />
         </Link>
 
         {/* ── Desktop nav ── */}

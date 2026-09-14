@@ -2,12 +2,12 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { galleryImages } from '@/lib/data'
 import Reveal from '@/components/Reveal'
+import GalleryMarquee from '@/components/GalleryMarquee'
 
-const PREVIEW_COUNT = 8
+const PREVIEW_COUNT = 8 // placeholder tiles shown until real work exists
 
 export default function GallerySection() {
-  const preview = galleryImages.slice(0, PREVIEW_COUNT)
-  const isEmpty = preview.length === 0
+  const isEmpty = galleryImages.length === 0
 
   return (
     <section style={{ background: '#0A0A0A', borderBottom: '1px solid rgba(236,232,225,0.13)' }}>
@@ -36,24 +36,12 @@ export default function GallerySection() {
             ))}
           </div>
         ) : (
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill,minmax(220px,1fr))', gap: 'clamp(10px,1.6vw,18px)' }}>
-            {preview.map((img, i) => (
-              <Reveal key={i} delay={(i % 4) * 60}>
-                <Link href="/gallery" style={{ display: 'block', position: 'relative', aspectRatio: i % 3 === 0 ? '3/4' : '1/1', overflow: 'hidden', borderRadius: 6, background: '#111', border: '1px solid rgba(236,232,225,0.08)', textDecoration: 'none' }} className="gallery-thumb">
-                  <Image src={img.src} alt={img.alt} fill sizes="(max-width:768px) 50vw, 25vw" style={{ objectFit: 'cover', transition: 'transform 0.4s ease' }} />
-                  {img.artist && (
-                    <span style={{ position: 'absolute', bottom: 10, left: 12, fontFamily: 'var(--font-space-mono), monospace', fontSize: 10, letterSpacing: '0.1em', textTransform: 'uppercase', color: 'rgba(236,232,225,0.75)' }}>{img.artist}</span>
-                  )}
-                </Link>
-              </Reveal>
-            ))}
-          </div>
+          <Reveal>
+            <GalleryMarquee />
+          </Reveal>
         )}
 
       </div>
-      <style>{`
-        .gallery-thumb:hover img { transform: scale(1.04); }
-      `}</style>
     </section>
   )
 }

@@ -2,6 +2,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { galleryImages } from '@/lib/data'
 import Reveal from '@/components/Reveal'
+import GalleryMarquee from '@/components/GalleryMarquee'
 
 export const metadata = {
   title: 'Work — Studio 187 Tattoo',
@@ -24,6 +25,13 @@ export default function GalleryPage() {
           Tattoos by the artists at Studio 187, Maylands WA. Fine line, traditional, realism, blackwork and everything in between.
         </p>
       </section>
+
+      {/* ── Scrolling strip ── */}
+      {!isEmpty && (
+        <section className="load-in" style={{ animationDelay: '0.3s', padding: 'clamp(40px,6vw,64px) 0 0' }}>
+          <GalleryMarquee />
+        </section>
+      )}
 
       {/* ── Grid ── */}
       <section style={{ maxWidth: 1320, margin: '0 auto', padding: 'clamp(48px,7vw,80px) clamp(20px,5vw,72px)' }}>
@@ -67,9 +75,6 @@ export default function GalleryPage() {
         )}
       </section>
 
-      <style>{`
-        .gallery-thumb:hover img { transform: scale(1.04); }
-      `}</style>
     </div>
   )
 }
