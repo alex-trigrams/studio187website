@@ -16,13 +16,10 @@ export interface Artist {
 
 // TODO: Review every artist's `tag` (style) below with the studio — several are
 // misplaced and don't match the artist's actual work. Confirmed wrong so far:
-//   - Gypsy: listed as 'Anime & colour' but her portfolio is dark blackwork /
-//     gothic illustrative portraiture.
 //   - Aino: listed as 'Japanese & ornamental' but her gallery is fine line
 //     botanical / delicate black and grey work.
-//   - Julian: listed as 'Black & grey realism' but his gallery is anime /
-//     manga linework (looks like his and Gypsy's tags may be swapped).
-// Corbin confirmed his own: 'Bold traditional & Japanese'.
+// Confirmed: Corbin 'Bold traditional & Japanese'; Gypsy and Julian's tags
+// were swapped and have been corrected.
 // Check the rest against each artist's Instagram before the next deploy.
 export const artists: Artist[] = [
   { name: 'Orazio (Oz)', first: 'Oz', short: 'OZ', tag: 'Fine line & script', handle: '@oztattooist', email: 'oraziotattooooo@gmail.com', img: '/images/oz.jpg', slug: 'oz', work: 4 },
@@ -30,8 +27,8 @@ export const artists: Artist[] = [
   { name: 'Ilara', first: 'Ilara', short: 'ILA', tag: 'Illustrative blackwork', handle: '@ilara.tattoos', email: 'ilara.white@gmail.com', img: '/images/ilara.jpg', slug: 'ilara', work: 4 },
   { name: 'Corbin', first: 'Corbin', short: 'COR', tag: 'Bold traditional & Japanese', handle: '@phelper.tattoos', email: 'phelper.tattoos@gmail.com', img: '/images/corbin.jpg', slug: 'corbin', work: 4 },
   { name: 'Aino', first: 'Aino', short: 'AIN', tag: 'Japanese & ornamental', handle: '@aino.tattoo', email: 'ainoshimada@gmail.com', img: '/images/aino.jpg', slug: 'aino', work: 4 },
-  { name: 'Julian', first: 'Julian', short: 'JUL', tag: 'Black & grey realism', handle: '@jujus.tattoo', email: 'juju.tattoos98@gmail.com', img: '/images/julian.jpg', slug: 'julian', work: 4, altImgs: ['/images/artists/julian-2.jpg'] },
-  { name: 'Gypsy', first: 'Gypsy', short: 'GYP', tag: 'Anime & colour', handle: '@gypsy.doll.tattoo', email: 'gypsydoll@mail.com', img: '/images/gypsy.jpg', slug: 'gypsy', work: 4, booking: 'https://www.gypsydoll.com/connect', altImgs: ['/images/artists/gypsy-2.jpg', '/images/artists/gypsy-3.jpg', '/images/artists/gypsy-4.jpg', '/images/artists/gypsy-5.jpg'] },
+  { name: 'Julian', first: 'Julian', short: 'JUL', tag: 'Anime & colour', handle: '@jujus.tattoo', email: 'juju.tattoos98@gmail.com', img: '/images/julian.jpg', slug: 'julian', work: 4, altImgs: ['/images/artists/julian-2.jpg'] },
+  { name: 'Gypsy', first: 'Gypsy', short: 'GYP', tag: 'Black & grey realism', handle: '@gypsy.doll.tattoo', email: 'gypsydoll@mail.com', img: '/images/gypsy.jpg', slug: 'gypsy', work: 4, booking: 'https://www.gypsydoll.com/connect', altImgs: ['/images/artists/gypsy-2.jpg', '/images/artists/gypsy-3.jpg', '/images/artists/gypsy-4.jpg', '/images/artists/gypsy-5.jpg'] },
   { name: 'Jaimee', first: 'Jaimee', short: 'JAI', tag: 'Floral fine line', handle: '@jaimeejay.tattoo', email: 'Jaimeejay.tattoo@gmail.com', img: '/images/jaimee.jpg', slug: 'jaimee', work: 4 },
   { name: 'Quinn', first: 'Quinn', short: 'QUI', tag: 'Fineline & micro', handle: '@quinns.ink', email: 'Quinns.inkk@gmail.com', img: '/images/quinn.jpg', slug: 'quinn', work: 4, altImgs: ['/images/artists/quinn-2.jpg'] },
   { name: 'Trinity', first: 'Trinity', short: 'TRI', tag: 'Fine line, custom & blackwork', handle: '@trinity.dollas.tattoo', email: '', img: '/images/trinity.jpg', slug: 'trinity', work: 4 },
