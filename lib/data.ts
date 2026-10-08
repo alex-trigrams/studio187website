@@ -20,6 +20,8 @@ export interface Artist {
 //     gothic illustrative portraiture.
 //   - Aino: listed as 'Japanese & ornamental' but her gallery is fine line
 //     botanical / delicate black and grey work.
+//   - Julian: listed as 'Black & grey realism' but his gallery is anime /
+//     manga linework (looks like his and Gypsy's tags may be swapped).
 // Corbin confirmed his own: 'Bold traditional & Japanese'.
 // Check the rest against each artist's Instagram before the next deploy.
 export const artists: Artist[] = [
@@ -160,30 +162,49 @@ export const galleryImages: GalleryImage[] = [
   // { src: '/images/gallery/filename.jpg', alt: 'Brief description', artist: 'Oz' },
   { src: '/images/gallery/quinn-08.jpg', alt: 'Black and grey koi fish and floral leg piece', artist: 'Quinn' },
   { src: '/images/gallery/corbin-01.jpg', alt: 'Bold traditional skull with red flames, calf', artist: 'Corbin' },
+  { src: '/images/gallery/julian-01.jpg', alt: 'Black and grey winged dragon chest piece', artist: 'Julian' },
   { src: '/images/gallery/aino-01.jpg', alt: 'Fine line lilies with dotwork flourishes, shoulder and upper arm', artist: 'Aino' },
+  { src: '/images/gallery/julian-02.jpg', alt: 'Anime characters in black linework, upper arm', artist: 'Julian' },
   { src: '/images/gallery/gypsy-01.jpg', alt: 'Black and grey Wednesday Addams portrait with graveyard, forearm', artist: 'Gypsy' },
   { src: '/images/gallery/quinn-12.jpg', alt: 'Memento Mori hourglass with skull and tree, black and grey', artist: 'Quinn' },
+  { src: '/images/gallery/julian-03.jpg', alt: 'Manga panel portrait in black and grey, forearm', artist: 'Julian' },
   { src: '/images/gallery/gypsy-02.jpg', alt: 'Blackwork doll in a mask and harness, forearm', artist: 'Gypsy' },
+  { src: '/images/gallery/julian-04.jpg', alt: 'Manga-style character portrait with dotwork shading, upper arm', artist: 'Julian' },
   { src: '/images/gallery/quinn-07.jpg', alt: 'Fine line lilies and blossoms forearm piece', artist: 'Quinn' },
+  { src: '/images/gallery/julian-05.jpg', alt: 'Anime character with red highlights and a hanging spider, upper arm', artist: 'Julian' },
   { src: '/images/gallery/aino-02.jpg', alt: 'Delicate fine line leafy vine wrapping the shoulder and collarbone', artist: 'Aino' },
   { src: '/images/gallery/gypsy-03.jpg', alt: 'Illustrative doll portrait with moth wings, upper arm', artist: 'Gypsy' },
+  { src: '/images/gallery/julian-06.jpg', alt: 'Sailing boat in fine linework down the back', artist: 'Julian' },
   { src: '/images/gallery/corbin-02.jpg', alt: 'Japanese orca and crashing waves shoulder and chest piece', artist: 'Corbin' },
+  { src: '/images/gallery/julian-07.jpg', alt: 'Bold blackwork Seven Deadly Sins symbol, shoulder', artist: 'Julian' },
   { src: '/images/gallery/quinn-10.jpg', alt: 'Matching lion and lioness arrow forearm tattoos', artist: 'Quinn' },
+  { src: '/images/gallery/julian-08.jpg', alt: 'Spiral creature in fine linework, forearm', artist: 'Julian' },
   { src: '/images/gallery/gypsy-04.jpg', alt: 'Solid blackwork anatomical heart with a crying eye', artist: 'Gypsy' },
   { src: '/images/gallery/quinn-06.jpg', alt: 'Fine line shark, turtle and hibiscus hand tattoo', artist: 'Quinn' },
+  { src: '/images/gallery/julian-09.jpg', alt: 'Anime portrait with red script, forearm', artist: 'Julian' },
   { src: '/images/gallery/aino-03.jpg', alt: 'Fine line cherry blossom branch on the forearm', artist: 'Aino' },
+  { src: '/images/gallery/julian-10.jpg', alt: 'One Piece Luffy in black linework, calf', artist: 'Julian' },
   { src: '/images/gallery/gypsy-05.jpg', alt: "Blackwork cleaver with a woman's face in the blade, calf", artist: 'Gypsy' },
   { src: '/images/gallery/corbin-03.jpg', alt: 'Traditional eagle, sharks and blackletter script stomach piece', artist: 'Corbin' },
+  { src: '/images/gallery/julian-11.jpg', alt: 'Two manga panels in black linework with red accents, calf', artist: 'Julian' },
   { src: '/images/gallery/quinn-05.jpg', alt: 'Blackwork skull and thorns knee tattoo', artist: 'Quinn' },
+  { src: '/images/gallery/julian-12.jpg', alt: 'Bold blackwork eye and curved blade, forearm', artist: 'Julian' },
   { src: '/images/gallery/quinn-03.jpg', alt: 'Colour baby dragon reading a book', artist: 'Quinn' },
+  { src: '/images/gallery/julian-13.jpg', alt: 'Anime scene band in black and grey, forearm', artist: 'Julian' },
   { src: '/images/gallery/aino-04.jpg', alt: 'Praying skeleton in fine line black and grey, shin', artist: 'Aino' },
   { src: '/images/gallery/quinn-04.jpg', alt: 'Matilda surrounded by stacks of books, colour illustration style', artist: 'Quinn' },
+  { src: '/images/gallery/julian-14.jpg', alt: 'Star Wars clone trooper in black linework, forearm', artist: 'Julian' },
   { src: '/images/gallery/quinn-02.jpg', alt: 'Colour Mad Hatter cartoon forearm tattoo', artist: 'Quinn' },
+  { src: '/images/gallery/julian-15.jpg', alt: 'Swallow with flowing feathers in fine line, upper arm', artist: 'Julian' },
   { src: '/images/gallery/corbin-04.jpg', alt: 'Bold black and grey traditional dragon, forearm', artist: 'Corbin' },
+  { src: '/images/gallery/julian-16.jpg', alt: 'Anime figure with a red lightsaber, forearm', artist: 'Julian' },
   { src: '/images/gallery/aino-05.jpg', alt: 'Smoky crescent moon and stars with script down the spine', artist: 'Aino' },
   { src: '/images/gallery/quinn-09.jpg', alt: 'Winnie the Pooh with honey pot, colour', artist: 'Quinn' },
+  { src: '/images/gallery/julian-17.jpg', alt: 'Ornamental eye and tentacle design, forearm', artist: 'Julian' },
   { src: '/images/gallery/quinn-11.jpg', alt: 'Mickey Mouse tipping his hat, colour forearm tattoo', artist: 'Quinn' },
+  { src: '/images/gallery/julian-18.jpg', alt: 'Silhouette band of figures with SONDER lettering, forearm', artist: 'Julian' },
   { src: '/images/gallery/aino-06.jpg', alt: 'Fine line lily and blossom bouquet with a gecko, upper arm', artist: 'Aino' },
+  { src: '/images/gallery/julian-19.jpg', alt: 'Kingdom Hearts Sora with Keyblade in black and grey, forearm', artist: 'Julian' },
 ]
 
 /**
