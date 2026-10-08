@@ -20,12 +20,13 @@ export interface Artist {
 //     gothic illustrative portraiture.
 //   - Aino: listed as 'Japanese & ornamental' but her gallery is fine line
 //     botanical / delicate black and grey work.
+// Corbin confirmed his own: 'Bold traditional & Japanese'.
 // Check the rest against each artist's Instagram before the next deploy.
 export const artists: Artist[] = [
   { name: 'Orazio (Oz)', first: 'Oz', short: 'OZ', tag: 'Fine line & script', handle: '@oztattooist', email: 'oraziotattooooo@gmail.com', img: '/images/oz.jpg', slug: 'oz', work: 4 },
   { name: 'Tcharna', first: 'Tcharna', short: 'TCH', tag: 'Bold traditional', handle: '@tcharna.tattoos', email: 'tcharna.tattoos@gmail.com', img: '/images/tcharna.jpg', slug: 'tcharna', work: 4 },
   { name: 'Ilara', first: 'Ilara', short: 'ILA', tag: 'Illustrative blackwork', handle: '@ilara.tattoos', email: 'ilara.white@gmail.com', img: '/images/ilara.jpg', slug: 'ilara', work: 4 },
-  { name: 'Corbin', first: 'Corbin', short: 'COR', tag: 'Neo-traditional', handle: '@phelper.tattoos', email: 'phelper.tattoos@gmail.com', img: '/images/corbin.jpg', slug: 'corbin', work: 4 },
+  { name: 'Corbin', first: 'Corbin', short: 'COR', tag: 'Bold traditional & Japanese', handle: '@phelper.tattoos', email: 'phelper.tattoos@gmail.com', img: '/images/corbin.jpg', slug: 'corbin', work: 4 },
   { name: 'Aino', first: 'Aino', short: 'AIN', tag: 'Japanese & ornamental', handle: '@aino.tattoo', email: 'ainoshimada@gmail.com', img: '/images/aino.jpg', slug: 'aino', work: 4 },
   { name: 'Julian', first: 'Julian', short: 'JUL', tag: 'Black & grey realism', handle: '@jujus.tattoo', email: 'juju.tattoos98@gmail.com', img: '/images/julian.jpg', slug: 'julian', work: 4 },
   { name: 'Gypsy', first: 'Gypsy', short: 'GYP', tag: 'Anime & colour', handle: '@gypsy.doll.tattoo', email: 'gypsydoll@mail.com', img: '/images/gypsy.jpg', slug: 'gypsy', work: 4, booking: 'https://www.gypsydoll.com/connect', altImgs: ['/images/artists/gypsy-2.jpg', '/images/artists/gypsy-3.jpg', '/images/artists/gypsy-4.jpg', '/images/artists/gypsy-5.jpg'] },
@@ -158,6 +159,7 @@ export interface GalleryImage {
 export const galleryImages: GalleryImage[] = [
   // { src: '/images/gallery/filename.jpg', alt: 'Brief description', artist: 'Oz' },
   { src: '/images/gallery/quinn-08.jpg', alt: 'Black and grey koi fish and floral leg piece', artist: 'Quinn' },
+  { src: '/images/gallery/corbin-01.jpg', alt: 'Bold traditional skull with red flames, calf', artist: 'Corbin' },
   { src: '/images/gallery/aino-01.jpg', alt: 'Fine line lilies with dotwork flourishes, shoulder and upper arm', artist: 'Aino' },
   { src: '/images/gallery/gypsy-01.jpg', alt: 'Black and grey Wednesday Addams portrait with graveyard, forearm', artist: 'Gypsy' },
   { src: '/images/gallery/quinn-12.jpg', alt: 'Memento Mori hourglass with skull and tree, black and grey', artist: 'Quinn' },
@@ -165,16 +167,19 @@ export const galleryImages: GalleryImage[] = [
   { src: '/images/gallery/quinn-07.jpg', alt: 'Fine line lilies and blossoms forearm piece', artist: 'Quinn' },
   { src: '/images/gallery/aino-02.jpg', alt: 'Delicate fine line leafy vine wrapping the shoulder and collarbone', artist: 'Aino' },
   { src: '/images/gallery/gypsy-03.jpg', alt: 'Illustrative doll portrait with moth wings, upper arm', artist: 'Gypsy' },
+  { src: '/images/gallery/corbin-02.jpg', alt: 'Japanese orca and crashing waves shoulder and chest piece', artist: 'Corbin' },
   { src: '/images/gallery/quinn-10.jpg', alt: 'Matching lion and lioness arrow forearm tattoos', artist: 'Quinn' },
   { src: '/images/gallery/gypsy-04.jpg', alt: 'Solid blackwork anatomical heart with a crying eye', artist: 'Gypsy' },
   { src: '/images/gallery/quinn-06.jpg', alt: 'Fine line shark, turtle and hibiscus hand tattoo', artist: 'Quinn' },
   { src: '/images/gallery/aino-03.jpg', alt: 'Fine line cherry blossom branch on the forearm', artist: 'Aino' },
   { src: '/images/gallery/gypsy-05.jpg', alt: "Blackwork cleaver with a woman's face in the blade, calf", artist: 'Gypsy' },
+  { src: '/images/gallery/corbin-03.jpg', alt: 'Traditional eagle, sharks and blackletter script stomach piece', artist: 'Corbin' },
   { src: '/images/gallery/quinn-05.jpg', alt: 'Blackwork skull and thorns knee tattoo', artist: 'Quinn' },
   { src: '/images/gallery/quinn-03.jpg', alt: 'Colour baby dragon reading a book', artist: 'Quinn' },
   { src: '/images/gallery/aino-04.jpg', alt: 'Praying skeleton in fine line black and grey, shin', artist: 'Aino' },
   { src: '/images/gallery/quinn-04.jpg', alt: 'Matilda surrounded by stacks of books, colour illustration style', artist: 'Quinn' },
   { src: '/images/gallery/quinn-02.jpg', alt: 'Colour Mad Hatter cartoon forearm tattoo', artist: 'Quinn' },
+  { src: '/images/gallery/corbin-04.jpg', alt: 'Bold black and grey traditional dragon, forearm', artist: 'Corbin' },
   { src: '/images/gallery/aino-05.jpg', alt: 'Smoky crescent moon and stars with script down the spine', artist: 'Aino' },
   { src: '/images/gallery/quinn-09.jpg', alt: 'Winnie the Pooh with honey pot, colour', artist: 'Quinn' },
   { src: '/images/gallery/quinn-11.jpg', alt: 'Mickey Mouse tipping his hat, colour forearm tattoo', artist: 'Quinn' },
